@@ -1,5 +1,5 @@
 import random
-
+#function for getting user input
 def input_val():
     name = input('Enter you name')
     return name
