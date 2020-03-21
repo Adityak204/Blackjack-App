@@ -4,6 +4,7 @@ import random
 def input_val():
     name = input('Enter you name')
     return name
+
 #Deck is a class, defining features inside it
 class Deck:
     def __init__(self):
