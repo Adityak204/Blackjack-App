@@ -1,9 +1,11 @@
-#Blackjack app
 import random
-#function for getting user input
+import argparse
+
+
 def input_val():
     name = input('Enter you name')
     return name
+
 
 class Deck:
     def __init__(self):
@@ -20,6 +22,7 @@ class Deck:
         card = self.suit.pop()
         # print('card drawn is {} of value {}'.format(card[0],card[1]))
         return card
+
 
 class Dealer:
     def __init__(self, name):
@@ -52,6 +55,7 @@ class Player(Dealer):
             else:
                 print("invalid entry")
                 continue
+
 
 class Game:
     def __init__(self, player, dealer='Jarvis'):
@@ -114,6 +118,12 @@ class Game:
                     print('The match is tied')
 
 
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description="Python implementation of BlackJack Game")
+    parser.add_argument('--user', help='Enter Player Name')
+    args = parser.parse_args()
+    game_on = Game(player=args.user)
+    game_on.play_game()
 
 
 
